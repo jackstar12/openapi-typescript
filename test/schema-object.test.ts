@@ -121,6 +121,15 @@ describe("Schema Object", () => {
     });
 
     describe("object", () => {
+
+      test("unknown", () => {
+        const schema: SchemaObject = {
+          type: "object",
+        };
+        const generated = transformSchemaObject(schema, options);
+        expect(generated).toBe(`Record<string, unknown>`)
+      })
+
       test("basic", () => {
         const schema: SchemaObject = {
           type: "object",

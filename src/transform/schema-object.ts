@@ -241,5 +241,5 @@ export function defaultSchemaObjectTransform(
   // nullable (3.0)
   if (schemaObject.nullable) finalType = tsUnionOf(finalType || "Record<string, unknown>", "null");
 
-  return finalType || "Record<string, never>"; // if no type could be generated, fall back to “empty object” type
+  return finalType || "Record<string, unknown>"; // if no type could be generated, fall back to “unknown object” type
 }
